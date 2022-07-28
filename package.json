@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.2.4",
+    "firebase": "^9.9.1",
+    "i": "^0.3.7",
     "next": "12.2.3",
+    "npm": "^8.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
