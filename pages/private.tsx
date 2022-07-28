@@ -9,7 +9,7 @@ const Private: React.FC<PrivateProps> = ({}) => {
   const { state, dispatch } = useAuth();
   const router = useRouter();
   useIsLogged();
-  console.log(state);
+
   return (
     <Box>
       <Text>{state.email}</Text>

@@ -13,6 +13,7 @@ const Home: NextPage = () => {
     await auth.signOut();
     setLoading(false);
   };
+  console.log('state', state);
   console.log(state.loading);
   return (
     <Box>

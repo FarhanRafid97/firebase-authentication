@@ -5,7 +5,7 @@ import { auth } from '../firebase';
 type Action = { type: 'login'; payload: { email: string; loading: boolean } };
 
 type Dispatch = (action: Action) => void;
-type State = { email: string; loading: boolean };
+type State = { email: string | null; loading: boolean };
 type AuthProviderProps = { children: React.ReactNode };
 
 const AuthStateComponent = React.createContext<
@@ -21,7 +21,7 @@ function authReducer(state: State, action: Action) {
       };
     }
     default: {
-      return { email: '', loading: false };
+      return state;
     }
   }
 }
@@ -42,7 +42,7 @@ function AuthProvider({ children }: AuthProviderProps) {
           });
         }
       } else {
-        dispatch({ type: 'login', payload: { email: '', loading: true } });
+        dispatch({ type: 'login', payload: { email: '', loading: false } });
       }
       return () => unsubscribe();
     });
